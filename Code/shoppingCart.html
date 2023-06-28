@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Shopping Cart</title>
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+	
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href=""><button>Sign up</button></a></li>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Pricing.html">Pricing</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="Locations.html">Locations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+<div class="container">
+
+	<h1>Your Shopping Cart</h1>
+
+	<div class="cart">
+
+		<div class="products">
+
+			<div class="product">
+
+				<img src="imgs/book1.jpg">
+
+				<div class="product-info">
+
+					<h3 class="product-name">The Diamond Eye: A Novel</h3>
+
+					<h4 class="product-price">$17.49</h4>
+
+					<p class="product-quantity">Quantity:<input type ="number" id="b1" value="1" min=0 max =10>
+
+					<p class="product-remove">
+
+						
+
+						<span class="remove">Remove</span>
+
+					</p>
+
+				</div>
+
+			</div>
+
+			<div class="product">
+
+				<img src="imgs/book2.jpg">
+
+				<div class="product-info">
+
+					<h3 class="product-name">Looking For Jane: A Novel</h3>
+
+					<h4 class="product-price">$14.99</h4>
+
+					<p class="product-quantity">Quantity: <input type ="number" id="b2" value="1" min=0 max =10>
+
+					<p class="product-remove">
+
+						
+
+						<span class="remove">Remove</span>
+                        
+
+					</p>
+                    
+				</div>
+
+			</div>
+            
+
+		</div>
+
+		<div class="cart-total">
+            <p><a>
+                <a id="update" onclick="calctotal()">Update Cart</a>
+            </a></p>
+            
+
+            <p>
+                <span>Offer: Spend $50+ more and get free shipping</span>
+            </p>
+			<p>
+				<span >Total Price:</span>
+				<span id="totalPrice"></span>
+			</p>
+
+			<p>
+				<span>Number of Items:</span>
+				<span id="Quantity"></span>
+			</p>
+            
+
+			<a href="#" id ="Checkout">Proceed to Checkout</a>
+			<a id="or">Or</a>
+			<a href="#" id ="paypal">PayPal</a>
+            <script>
+                function calctotal(){
+                var quan1 = document.getElementById("b1").value;
+                var quan2 = document.getElementById("b2").value;
+                let quanTotal = (Number(quan1) + Number(quan2));
+                document.getElementById("Quantity").innerHTML = quanTotal;
+                var total = (quan1 * 17.49) + (quan2 * 14.99);
+                document.getElementById("totalPrice").innerHTML = total;
+                console.log(quan1);
+                console.log(quanTotal);
+                }
+            </script>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+</body>
+
+
+</html>
